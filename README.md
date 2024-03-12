@@ -14,14 +14,14 @@ Here I installed *WSL* in my PC.
 
 *1. Test the Shell*
 
-```shell
+```bash
 chen@Iamnotphage:~/missing-semester$ echo $SHELL
 /bin/bash
 ```
 
 *2. Create a new directory*
 
-```shell
+```bash
 chen@Iamnotphage:~$ cd /tmp
 chen@Iamnotphage:/tmp$ mkdir missing
 chen@Iamnotphage:/tmp$ ls
