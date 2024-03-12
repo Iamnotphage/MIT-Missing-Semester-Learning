@@ -6,15 +6,24 @@ Some notes about this tiny course.
 * [Record](https://www.youtube.com/playlist?list=PLyzOVJj3bHQuloKGG59rS43e29ro7I57J)
 
 ***
-# Shell
+# Course overview + the shell
 
-Here I installed #WSL in my PC.
+Here I installed *WSL* in my PC.
 
 **Exercises:**
 
 *1. Test the Shell*
 
-```
-chen@Iamnotphage:~/LearnShell$ echo $SHELL
+```shell
+chen@Iamnotphage:~/missing-semester$ echo $SHELL
 /bin/bash
+```
+
+*2. Create a new directory*
+
+```shell
+chen@Iamnotphage:~$ cd /tmp
+chen@Iamnotphage:/tmp$ mkdir missing
+chen@Iamnotphage:/tmp$ ls
+missing
 ```
