@@ -131,3 +131,106 @@ Seems like the file in `/home` needs `sudo`, otherwise it will turn out to be pe
 chen@Iamnotphage:~$ cat /sys/class/power_supply/BAT1/capacity
 98
 ```
+
+***
+
+# Shell Tools and Scripting
+
+**Exercises:**
+
+*1. Read [`man ls`](https://www.man7.org/linux/man-pages/man1/ls.1.html) and write an `ls` command that lists files in the following manner*
+
+- Includes all files, including hidden files
+- Sizes are listed in human readable format (e.g. 454M instead of 454279954)
+- Files are ordered by recency
+- Output is colorized 
+
+```shell
+chen@Iamnotphage:~/missing-semester$ ls -alth --color=auto
+total 24K
+drwxr-x--- 4 chen chen 4.0K Mar 13 12:46 ..
+drwxr-xr-x 4 chen chen 4.0K Mar 13 10:41 .
+drwxr-xr-x 2 chen chen 4.0K Mar 13 10:28 bar
+drwxr-xr-x 2 chen chen 4.0K Mar 13 10:28 foo
+-rwxr-xr-x 1 chen chen  292 Mar 13 10:25 forloop.sh
+-rwxr-xr-x 1 chen chen   81 Mar 12 20:49 helloworld.sh
+```
+
+*2. Write bash functions `marco` and `polo` that do the following. Whenever you execute `marco` the current working directory should be saved in some manner, then when you execute `polo`, no matter what directory you are in, `polo` should `cd` you back to the directory where you executed `marco`. For ease of debugging you can write the code in a file `marco.sh` and (re)load the definitions to your shell by executing `source marco.sh`.*
+
+```bash
+# marco.sh
+marco(){
+        export MARCO=$(pwd)
+}
+
+polo(){
+        cd "$MARCO"
+}
+```
+
+
+```shell
+chen@Iamnotphage:/$ source marco.sh
+chen@Iamnotphage:/$ marco
+chen@Iamnotphage:/$ echo "$MARCO"
+/
+chen@Iamnotphage:/$ cd ~
+chen@Iamnotphage:~$ polo
+chen@Iamnotphage:/$ pwd
+/
+```
+
+*3. *
+
+in `err.sh`:
+
+```shell
+#!/usr/bin/env bash
+
+n=$(( RANDOM % 100 ))
+
+if [[ n -eq 42 ]]; then
+        echo "Something went wrong"
+        >&2 echo "The error was using magic numbers"
+        exit 1
+fi
+
+echo "Everything went according to plan"
+```
+
+in `script.sh`:
+
+```shell
+#!/bin/bash
+
+./err.sh > ./out.log 2> ./out.log
+
+count=1
+
+while [[ $? -eq 0 ]]
+do
+        let count++
+        ./err.sh >> ./out.log 2>> ./out.log
+done
+
+cat ./out.log
+echo "run times: $count"
+```
+
+Now back to the terminal.
+
+```shell
+chen@Iamnotphage:~/missing-semester$ bash script.sh err.sh
+Everything went according to plan
+Everything went according to plan
+.................................
+Everything went according to plan
+Something went wrong
+The error was using magic numbers
+run times: 72
+```
+
+`sh` or `bash` depends on the **SheBang**. `sh` and `bash` are kinda different.
+
+*4. *
