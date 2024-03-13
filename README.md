@@ -181,7 +181,7 @@ chen@Iamnotphage:/$ pwd
 /
 ```
 
-*3. *
+*3. Say you have a command that fails rarely. In order to debug it you need to capture its output but it can be time consuming to get a failure run. Write a bash script that runs the following script until it fails and captures its standard output and error streams to files and prints everything at the end. Bonus points if you can also report how many runs it took for the script to fail.*
 
 in `err.sh`:
 
@@ -233,4 +233,51 @@ run times: 72
 
 `sh` or `bash` depends on the **SheBang**. `sh` and `bash` are kinda different.
 
-*4. *
+*4. Write a command that recursively finds all HTML files in the folder and makes a zip with them. Note that your command should work even if the files have spaces (hint: check `-d` flag for `xargs`).*
+
+`find` and `xargs` is required. We can check the manual by typeing : `man xargs`
+
+For a better test of the command, I `touch` some `html` files.
+
+```shell
+chen@Iamnotphage:~/missing-semester$ mkdir TestXargs
+chen@Iamnotphage:~/missing-semester$ cd TestXargs/
+chen@Iamnotphage:~/missing-semester/TestXargs$ touch {a,b,c,d,e,f}.html
+chen@Iamnotphage:~/missing-semester/TestXargs$ mkdir g
+chen@Iamnotphage:~/missing-semester/TestXargs$ cd g
+chen@Iamnotphage:~/missing-semester/TestXargs/g$ touch {h,i,j,k,l}.html
+```
+
+And execute this:
+
+```shell
+chen@Iamnotphage:~/missing-semester$ find . -type f -name "*.html" | xargs -d "\n" tar -cvzf myzip.tar.gz
+```
+
+`-d` means : delimiter.
+
+As we can see that when we use `find` command, it will output the file and seperate by `\n`.
+
+Finally we just use `tar`.
+
+*5. (Advanced) Write a command or script to recursively find the most recently modified file in a directory. More generally, can you list all files by recency?*
+
+I list the top 8 files that most recently modified. (sort of confused about this exercise)
+
+```shell
+chen@Iamnotphage:~/missing-semester$ ls -ltR | head -n 10
+.:
+total 40
+-rw-r--r-- 1 chen chen  227 Mar 13 20:42 myzip.tar.gz
+drwxr-xr-x 3 chen chen 4096 Mar 13 20:41 TestXargs
+-rw-r--r-- 1 chen chen 1279 Mar 13 16:58 out.log
+-rwxrwxrwx 1 chen chen  176 Mar 13 16:52 script.sh
+-rwxr-xr-x 1 chen chen  202 Mar 13 16:50 err.sh
+-rwxr-xr-x 1 chen chen  292 Mar 13 16:47 forloop.sh
+-rw-r--r-- 1 chen chen   57 Mar 13 12:57 marco.sh
+drwxr-xr-x 2 chen chen 4096 Mar 13 10:28 bar
+```
+
+# Editors (Vim)
+
+Well, actually every single CS student can use this tool.
