@@ -281,3 +281,28 @@ drwxr-xr-x 2 chen chen 4096 Mar 13 10:28 bar
 # Editors (Vim)
 
 Well, actually every single CS student can use this tool.
+
+Vim has multiple operating modes:
+
+| Modes | Meaning |
+|-------|---------|
+|**Normal**|for moving around a file and making edits|
+|**Insert**|for inserting text|
+|**Replace**|for replacing text|
+|**Visual**|for selecting blocks of text|
+|**Command-line**|for running a command|
+
+Some **movement** commands;
+
+- Basic movement: `hjkl` (left, down, up, right)
+- Words: `w` (next word), `b` (beginning of word), `e` (end of word)
+- Lines: `0` (beginning of line), `^` (first non-blank character), `$` (end of line)
+- Screen: `H` (top of screen), `M` (middle of screen), `L` (bottom of screen)
+- Scroll: `Ctrl-u` (up), `Ctrl-d` (down)
+- File: `gg` (beginning of file), `G` (end of file)
+- Line numbers: `:{number}<CR>` or `{number}G` (line {number})
+- Misc: `%` (corresponding item)
+- Find: `f{character}`, `t{character}`, `F{character}`, `T{character}`
+    - find/to forward/backward {character} on the current line
+    - `,` / `;` for navigating matches
+- Search: `/{regex}`, `n` / `N` for navigating matches
