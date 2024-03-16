@@ -349,3 +349,16 @@ You can use modifiers to change the meaning of a noun. Some modifiers are `i`, 
 - `ci(` change the contents inside the current pair of parentheses
 - `ci[` change the contents inside the current pair of square brackets
 - `da'` delete a single-quoted string, including the surrounding single quotes
+
+**Exercises:**
+
+*1. Complete `vimtutor`. Note: it looks best in a [80x24](https://en.wikipedia.org/wiki/VT100) (80 columns by 24 lines) terminal window.*
+
+```shell
+chen@Iamnotphage:~/missing-semester$ vimtutor
+```
+
+And you just follow the tutor. It's so funny.
+
+*2. Download our [basic vimrc](https://missing.csail.mit.edu/2020/files/vimrc) and save it to `~/.vimrc`. Read through the well-commented file (using Vim!), and observe how Vim looks and behaves slightly differently with the new config.*
+
