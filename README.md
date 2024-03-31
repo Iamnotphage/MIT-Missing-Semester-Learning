@@ -362,3 +362,30 @@ And you just follow the tutor. It's so funny.
 
 *2. Download our [basic vimrc](https://missing.csail.mit.edu/2020/files/vimrc) and save it to `~/.vimrc`. Read through the well-commented file (using Vim!), and observe how Vim looks and behaves slightly differently with the new config.*
 
+Just read.
+
+*3. Install and configure a plugin: [ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim).
+	3.1. Create the plugins directory with `mkdir -p ~/.vim/pack/vendor/start`
+    3.2. Download the plugin: `cd ~/.vim/pack/vendor/start; git clone https://github.com/ctrlpvim/ctrlp.vim`
+    3.3. Read the [documentation](https://github.com/ctrlpvim/ctrlp.vim/blob/master/readme.md) for the plugin. Try using CtrlP to locate a file by navigating to a project directory, opening Vim, and using the Vim command-line to start `:CtrlP`.
+    3.4. Customize CtrlP by adding [configuration](https://github.com/ctrlpvim/ctrlp.vim/blob/master/readme.md#basic-options) to your `~/.vimrc` to open CtrlP by pressing Ctrl-P.*
+
+Ctrl-P is a vim tool, [more](https://github.com/ctrlpvim/ctrlp.vim/blob/master/readme.md) about it.
+
+I found that I donot need to customize to open CtrlP by pressing Ctrl-P. Maybe it's the version problem.
+
+*4. To practice using Vim, re-do the [Demo](https://missing.csail.mit.edu/2020/editors/#demo) from lecture on your own machine.*
+
+Yes I did.
+
+*5. Use Vim for _all_ your text editing for the next month. Whenever something seems inefficient, or when you think “there must be a better way”, try Googling it, there probably is. If you get stuck, come to office hours or send us an email.*
+
+Kinda difficult.
+
+*6. Configure your other tools to use Vim bindings (see instructions above).*
+
+```shell
+chen@Iamnotphage:~$ vim vimrc
+```
+
+*7. Further customize your `~/.vimrc` and install more plugins.*
