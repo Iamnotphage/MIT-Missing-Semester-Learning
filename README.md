@@ -389,3 +389,20 @@ chen@Iamnotphage:~$ vim vimrc
 ```
 
 *7. Further customize your `~/.vimrc` and install more plugins.*
+
+......
+
+# Data Wrangling
+
+About **Regular Expression** :
+
+It's exactly the same concept in my **Compilers** lesson.
+
+[Learning by doing](https://regexone.com/) is always the best.
+
+**Exercises:**
+
+*1. Take this [short interactive regex tutorial](https://regexone.com/).*
+
+DONE.
+
